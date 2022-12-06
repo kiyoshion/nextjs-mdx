@@ -7,9 +7,10 @@
 }
 
 @layer components {
-  h1 { @apply text-2xl font-bold mb-4; }
-  h2 { @apply text-xl font-bold mb-4; }
-  p { @apply my-6 leading-6 text-justify; }
+  h1 { @apply text-2xl font-bold my-4; }
+  h2 { @apply text-xl font-bold my-4; }
+  h3 { @apply text-lg font-bold my-4; }
+  p { @apply my-6 leading-6 text-sm text-justify; }
 }
 
 html,
