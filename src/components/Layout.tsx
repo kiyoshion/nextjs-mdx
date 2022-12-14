@@ -11,7 +11,7 @@ export default function Layout({ children, meta }: { children: any, meta: any })
 
       <Navbar />
 
-      <main className='max-w-2xl mx-auto'>{children}</main>
+      <main>{children}</main>
     </div>
   );
 }
