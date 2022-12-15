@@ -3,6 +3,7 @@ import matter from 'gray-matter';
 import Layout from '../../components/Layout';
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { serialize } from 'next-mdx-remote/serialize';
+import Image from 'next/image';
 
 type Props = {
   params: {
@@ -11,7 +12,9 @@ type Props = {
   meta: {
     title: string;
     desc: string;
+    intro: string;
     createdAt: string;
+    img: string;
   }
   content: MDXRemoteSerializeResult;
 };
@@ -46,10 +49,16 @@ export const getStaticPaths = async () => {
 export default function Tour({ meta, content }: Props) {
   return (
       <Layout meta={meta}>
-        <header>
-          <h1>{meta.title}</h1>
+        <header className='max-w-2xl mx-auto my-12'>
+          <h1 className='text-center text-3xl'>{meta.title}</h1>
+          <p className='text-center'>{meta.createdAt}</p>
+          <p className='max-w-xl mx-auto text-md'>{meta.intro}</p>
         </header>
-        <MDXRemote {...content} />
+        {meta.img && <Image src={`/img/${meta.img}`} width={1000} height={500} alt={meta.title} className='w-full mb-12 mx-auto' />}
+        <div className='max-w-5xl mx-auto'>
+          <div className='max-w-md mr-8'><MDXRemote {...content} /></div>
+          <div></div>
+        </div>
       </Layout>
   );
 }

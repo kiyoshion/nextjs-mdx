@@ -1,0 +1,34 @@
+---
+title: 'Next.js + MDXではじめるSSGブログ開発'
+desc: 'これはNext.js + MDXでSSGブログを開発するチュートリアルです。'
+createdAt: '2022-12-06'
+---
+
+export default ({ children }) => {children}
+
+## はじめに
+
+これはNext.js + MDXでSSGブログを開発するチュートリアルです。
+
+## Next.jsにTypeScriptを導入する
+
+### tsconfig.jsonのオプション
+
+#### compilerOptions
+
+##### allowJs
+これをtrueにしておくと、.jsと.jsxもコンパイル対象に含まれるようになる。
+
+##### jsx
+tsxファイルをjsxやjsにコンパイルする際の出力の形式を指定する。
+
+##### noEmit
+trueにするとコンパイル結果を出力しなくなる。
+
+#### include
+コンパイル対象のソースを指定する。
+
+```
+"include": []
+```
+
