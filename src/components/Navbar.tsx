@@ -9,7 +9,10 @@ export default function Navbar() {
         </div>
         <div className='flex items-center justify-start'>
           <div>
-            <Link href='/tours'>Tours</Link>
+            <Link className='px-2' href='/tours'>Tours</Link>
+          </div>
+          <div>
+            <Link className='px-2' href='/about'>About</Link>
           </div>
         </div>
       </div>
