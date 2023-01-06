@@ -14,6 +14,9 @@ export default function Navbar() {
           <div>
             <Link className='px-2' href='/about'>About</Link>
           </div>
+          <div>
+            <Link className='px-2' href='/contact'>Contact</Link>
+          </div>
         </div>
       </div>
     </nav>
