@@ -1,7 +1,12 @@
+import Layout from "components/Layout";
+
 export default function Contact() {
   return (
-    <div>
+    <Layout meta={{
+      title: 'Contact',
+      desc: 'Contact',
+    }}>
       <h1>Contact</h1>
-    </div>
+    </Layout>
   );
 }
