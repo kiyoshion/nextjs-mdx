@@ -7,6 +7,7 @@ export default function Contact() {
       desc: 'Contact',
     }}>
       <h1>Contact</h1>
+      <p>This is contact</p>
     </Layout>
   );
 }
