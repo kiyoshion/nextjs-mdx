@@ -18,7 +18,6 @@ type ToursProps = {
 
 export const getStaticProps = () => {
   const files = fs.readdirSync('src/pages/tours/data');
-  console.log(files)
   const tours = files.map((fileName) => {
     const id = fileName.replace(/\.mdx$/, '');
     const fileContent = fs.readFileSync(`src/pages/tours/data/${fileName}`, 'utf-8');

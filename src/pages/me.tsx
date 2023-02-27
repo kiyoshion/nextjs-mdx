@@ -1,6 +1,6 @@
 import Layout from "components/Layout";
 
-export default function About() {
+export default function Me() {
   return (
     <Layout meta={{
       title: 'About',

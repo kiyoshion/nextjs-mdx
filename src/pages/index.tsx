@@ -13,6 +13,12 @@ export default function Home() {
       <h1>more graphical, more interactive.</h1>
 
       <div>
+        <Link href='/works'>
+          <div>
+            <h2>Works</h2>
+            <p>My works are here.</p>
+          </div>
+        </Link>
         <Link href='/tours'>
           <div>
             <h2>Tours</h2>
