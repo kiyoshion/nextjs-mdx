@@ -45,15 +45,17 @@ export default function Works({ works }: WorksProps) {
         desc: '制作実績'
       }}
     >
-      <div className='flex flex-col'>
+      <div className='max-w-7xl mx-auto p-4 text-sm flex flex-col'>
         <h1>Works</h1>
         <p>What I did, What I wanted to.</p>
       </div>
-      {works.map((work: WorkProps) => (
-        <Link href={`/works/${work.id}`} key={work.id}>
-          <h2>{work.meta.title}</h2>
-        </Link>
-      ))}
+      <div className='max-w-7xl mx-auto p-4 text-sm flex'>
+        {works.map((work: WorkProps) => (
+          <Link href={`/works/${work.id}`} key={work.id}>
+            <h2>{work.meta.title}</h2>
+          </Link>
+        ))}
+      </div>
     </Layout>
   )
 }
