@@ -6,8 +6,10 @@ export default function Contact() {
       title: 'Contact',
       desc: 'Contact',
     }}>
-      <h1>Contact</h1>
-      <p>This is contact</p>
+      <div className='max-w-7xl mx-auto p-4'>
+        <h1>Contact</h1>
+        <p>This is contact</p>
+      </div>
     </Layout>
   );
 }
