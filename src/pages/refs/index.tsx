@@ -44,15 +44,17 @@ export default function Refs({ refs }: RefsProps) {
         desc: '制作実績'
       }}
     >
-      <div className='flex flex-col'>
+      <div className='max-w-7xl mx-auto p-4'>
         <h1>Works</h1>
         <p>What I did, What I wanted to.</p>
       </div>
+      <div className='max-w-7xl mx-auto p-4'>
       {refs.map((ref: RefProps) => (
         <Link href={`/refs/${ref.id}`} key={ref.id}>
           <h2>{ref.meta.title}</h2>
         </Link>
       ))}
+      </div>
     </Layout>
   )
 }
