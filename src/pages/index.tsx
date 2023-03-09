@@ -10,9 +10,9 @@ export default function Home() {
       title: 'Chic Hack',
       desc: 'How to develop any app?',
     }}>
-      <h1>more graphical, more interactive.</h1>
+      <h1 className='max-w-7xl mx-auto p-4'>more graphical, more interactive.</h1>
 
-      <div>
+      <div className='max-w-7xl mx-auto p-4'>
         <Link href='/works'>
           <div>
             <h2>Works</h2>
