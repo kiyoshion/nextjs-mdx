@@ -44,15 +44,17 @@ export default function Tours({ tours }: ToursProps) {
         desc: 'チュートリアル'
       }}
     >
-      <div className='flex flex-col'>
+      <div className='flex flex-col max-w-7xl mx-auto p-4'>
         <h1>Tours</h1>
         <p>more Graphical, more Interactive.</p>
       </div>
-      {tours.map((tour: TourProps) => (
-        <Link href={`/tours/${tour.id}`} key={tour.id}>
-          <h2>{tour.meta.title}</h2>
-        </Link>
-      ))}
+      <div className='max-w-7xl mx-auto p-4'>
+        {tours.map((tour: TourProps) => (
+          <Link href={`/tours/${tour.id}`} key={tour.id}>
+            <h2>{tour.meta.title}</h2>
+          </Link>
+        ))}
+      </div>
     </Layout>
   )
 }
