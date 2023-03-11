@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import Layout from "components/Layout";
 
 export default function Me() {
@@ -8,7 +9,7 @@ export default function Me() {
     }}>
       <div className='max-w-7xl mx-auto p-4'>
         <h1>About</h1>
-        <p>This is about</p>
+        <p>I'm a web engineer in Japan.</p>
       </div>
     </Layout>
   );
