@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import Layout from 'components/Layout'
 import Head from 'next/head'
 import Image from 'next/image'
@@ -11,6 +12,7 @@ export default function Home() {
       desc: 'How to develop any app?',
     }}>
       <h1 className='max-w-7xl mx-auto p-4'>more graphical, more interactive.</h1>
+      <p className='max-w-7xl mx-auto p-4'>Let's improve yourself.</p>
 
       <div className='max-w-7xl mx-auto p-4'>
         <Link href='/works'>
