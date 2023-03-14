@@ -8,7 +8,7 @@ export default function Contact() {
     }}>
       <div className='max-w-7xl mx-auto p-4'>
         <h1>Contact</h1>
-        <p>This is contact</p>
+        <p>If you wanna contact me, say hi via below.</p>
       </div>
     </Layout>
   );

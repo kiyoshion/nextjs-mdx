@@ -20,6 +20,9 @@ export default function Navbar() {
           <div>
             <Link className='px-2' href='/me'>me</Link>
           </div>
+          <div>
+            <Link className='px-2' href='/contact'>contact</Link>
+          </div>
         </div>
       </div>
     </nav>
