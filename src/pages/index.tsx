@@ -21,6 +21,12 @@ export default function Home() {
             <p>My works are here.</p>
           </div>
         </Link>
+        <Link href='/refs'>
+          <div>
+            <h2>References</h2>
+            <p>Here's cheat sheets.</p>
+          </div>
+        </Link>
         <Link href='/tours'>
           <div>
             <h2>Tours</h2>
