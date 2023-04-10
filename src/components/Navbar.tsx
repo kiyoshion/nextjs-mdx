@@ -18,6 +18,9 @@ export default function Navbar() {
             <Link className='px-2' href='/tours'>tours</Link>
           </div>
           <div>
+            <Link className='px-2' href='/movies'>movies</Link>
+          </div>
+          <div>
             <Link className='px-2' href='/me'>me</Link>
           </div>
           <div>
