@@ -22,7 +22,6 @@ export const getStaticProps = () => {
     const id = fileName.replace(/\.mdx$/, '');
     const fileContent = fs.readFileSync(`src/pages/works/data/${fileName}`, 'utf-8');
     const { data } = matter(fileContent);
-    // data.sort((a: { launchedAt: string}, b: {launchedAt: string}) => a.launchedAt > b.launchedAt ? 1 : -1)
     console.log(data)
 
     return {
