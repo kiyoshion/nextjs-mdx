@@ -15,7 +15,7 @@ type WorkProps = {
     launchedAt: number;
     thumb: string;
     tag: string;
-    stacks: StackProps[];
+    stacks: string[];
     frameworks: FrameworkProps[];
     others: OtherProps[];
     server: string;
@@ -175,13 +175,26 @@ export default function Works({ works, newtags }: { works: WorkProps[], newtags:
                   width={600}
                   height={400}
                   alt={work.meta.title}
-                  className='mb-2'
+                  className='rounded-t-md border-2 border-slate-50'
                 />
+                <div className='p-4 bg-slate-50 rounded-b-md border-2 border-slate-50'>
                 <div className='flex justify-between align-end'>
-                  <h2 className='my-0'>{work.meta.title}</h2>
+                  <div className='flex items-center'>
+                    <h2 className='my-0 mr-2'>{work.meta.title}</h2>
+                  </div>
                   <span className='font-bold text-xl'>{work.meta.launchedAt.toString().slice(0, 4)}</span>
                 </div>
                 <span className='text-xs'>{work.meta.intro}</span>
+                    <div className='flex items-center mt-2'>
+                    {work.meta.stacks.map((stack) => (
+                      <Image
+                        key={stack}
+                        src={`/img/svg/${stack}.svg`} width={14} height={14} alt={stack}
+                        className='mr-2'
+                      />
+                    ))}
+                    </div>
+                    </div>
               </Link>
               </motion.div>
           ))}

@@ -76,7 +76,7 @@ export default function Home({ works, memos }: { works: WorkProps[], memos: Memo
     <Layout meta={{
       title: "Kiyoshi Onoda's portfolio",
       desc: 'Webエンジニア小野田のポートフォリオです。',
-      image: '/img/works/portflio-top.jpg',
+      image: '/img/works/portfolio-top.jpg',
       url: `${CONSTS.HOST}`
     }}>
 
@@ -110,7 +110,7 @@ export default function Home({ works, memos }: { works: WorkProps[], memos: Memo
                   width={600}
                   height={400}
                   alt={work.meta.title}
-                  className='mb-2'
+                  className='mb-2 rounded-b-md border-2 border-slate-50'
                 />
             </Link>
           ))}
