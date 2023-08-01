@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import { CONSTS } from 'consts';
 
 type WorkProps = {
   id: string;
@@ -109,8 +110,10 @@ export default function Works({ works, newtags }: { works: WorkProps[], newtags:
   return (
     <Layout
       meta={{
-        title: 'Works',
-        desc: '制作実績'
+        title: "Kiyoshi Onoda's works",
+        desc: 'Webエンジニア小野田の制作実績です。',
+        image: `${CONSTS.HOST}/img/${works[0].meta.thumb}`,
+        url: `${CONSTS.HOST}/works`
       }}
     >
       <motion.div

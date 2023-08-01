@@ -6,6 +6,7 @@ import matter from 'gray-matter';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Card from 'components/Card';
+import { CONSTS } from 'consts';
 
 type WorkProps = {
   id: string;
@@ -73,8 +74,10 @@ export const getStaticProps = () => {
 export default function Home({ works, memos }: { works: WorkProps[], memos: MemoProps[] }) {
   return (
     <Layout meta={{
-      title: 'Chic Hack',
-      desc: 'How to develop any app?',
+      title: "Kiyoshi Onoda's portfolio",
+      desc: 'Webエンジニア小野田のポートフォリオです。',
+      image: '/img/works/portflio-top.jpg',
+      url: `${CONSTS.HOST}`
     }}>
 
       <motion.div

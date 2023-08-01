@@ -5,6 +5,7 @@ import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { serialize } from 'next-mdx-remote/serialize';
 import Image from 'next/image';
 import Link from 'next/link';
+import { CONSTS } from 'consts';
 
 type Props = {
   params: {
@@ -27,6 +28,7 @@ export const getStaticProps = async ({ params }: Props) => {
 
   return {
     props: {
+      params,
       meta: data,
       content: mdxSource,
     },
@@ -47,9 +49,14 @@ export const getStaticPaths = async () => {
   };
 }
 
-export default function Work({ meta, content }: Props) {
+export default function Work({ meta, content, params }: Props) {
   return (
-      <Layout meta={meta}>
+      <Layout meta={{
+        title: `${meta.title}`,
+        desc: `${meta.desc}`,
+        image: `${CONSTS.HOST}/img/${meta.img}`,
+        url: `${CONSTS.HOST}/memos/${params.id}`
+      }}>
         <header className='max-w-2xl mx-auto my-12 sm:px-0 px-4'>
           <h1 className='text-center sm:text-3xl text-xl'>{meta.title}</h1>
           <p className='text-center'>{meta.createdAt}</p>

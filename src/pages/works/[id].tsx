@@ -6,6 +6,7 @@ import { serialize } from 'next-mdx-remote/serialize';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { CONSTS } from 'consts';
 
 type Props = {
   params: {
@@ -40,6 +41,7 @@ export const getStaticProps = async ({ params }: Props) => {
 
   return {
     props: {
+      params,
       meta: data,
       content: mdxSource,
     },
@@ -60,11 +62,17 @@ export const getStaticPaths = async () => {
   };
 }
 
-export default function Work({ meta, content }: Props) {
+export default function Work({ meta, content, params }: Props) {
   const lastKey = [...meta.keys].pop()
 
   return (
-      <Layout meta={meta}>
+      <Layout
+        meta={{
+          title: `${meta.title}`,
+          desc: `Webエンジニア小野田が制作した${meta.title}です。${meta.desc}`,
+          image: `${CONSTS.HOST}/img/${meta.thumb}`,
+          url: `${CONSTS.HOST}/works/${params.id}`
+        }}>
         <motion.div
           animate={{ y: 0, opacity: 1 }}
           initial={{ y: 25, opacity: 0 }}
@@ -72,8 +80,8 @@ export default function Work({ meta, content }: Props) {
           transition={{ duration: 0.4, ease: 'easeInOut', delay: 0.2 }}
         >
         <header className='max-w-2xl mx-auto my-12 text-center'>
-          <h1 className='text-center sm:text-3xl text-2xl'>{meta.title}</h1>
-          <p className='text-center text-md font-bold'>{meta.launchedAt.toString().slice(0, 4)}</p>
+          <h1 className='text-center sm:text-3xl text-2xl sm:my-4 my-2'>{meta.title}</h1>
+          <p className='text-center text-md font-bold sm:my-4 my-2'>{meta.launchedAt.toString().slice(0, 4)}</p>
           {meta.url !== '' &&
             <div className='sm:my-4 my-2 p-2 flex items-bottom justify-center hover:opacity-80 duration-75 cursor-pointer'>
               <a href={meta.url} target='_blank' rel='noopener noreferrer' className=''>{meta.url}</a>
@@ -136,7 +144,7 @@ export default function Work({ meta, content }: Props) {
           </div>)}
         </div>
 
-        <div className='flex justify-between max-w-4xl mx-auto sm:my-20 my-8'>
+        <div className='flex justify-between max-w-4xl mx-auto sm:my-20 my-8 sm:px-0 px-4'>
           {meta.prev !== '' ?
             <div className='buttonHoverReverse flex justify-between align-text-bottom transition-all ease-in-out mb-4'>
               <Link href={`/works/${meta.prev.toLowerCase()}`} className='text-2xl font-bold flex items-top my-2'>

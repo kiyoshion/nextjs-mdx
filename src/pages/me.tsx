@@ -3,12 +3,15 @@ import Layout from "components/Layout";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from 'framer-motion';
+import { CONSTS } from "consts";
 
 export default function Me() {
   return (
     <Layout meta={{
-      title: "Kiyoshi Onoda's portfolio.",
-      desc: "Kiyoshi Onoda's portfolio.",
+      title: "Hello, I'm Kiyoshi Onoda.",
+      desc: 'Webエンジニア小野田のポートフォリオです。',
+      image: '/img/works/portflio-top.jpg',
+      url: `${CONSTS.HOST}/me`
     }}>
       <motion.div
         animate={{ y: 0, opacity: 1 }}
