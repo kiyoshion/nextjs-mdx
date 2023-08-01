@@ -1,9 +1,10 @@
 ---
-title: 'Laravel + React + InertiaではじめるSPA開発 〜VPSにSSRでデプロイしてみる〜'
+title: 'Laravel + React + InertiaではじめるSPA開発 〜VPSにSSRでデプロイしてみた〜'
 desc: 'これはLaravel + React + InertiaではじめるSPA開発のチュートリアルです。'
-intro: 'これはLaravel + React + InertiaでSPAを開発するチュートリアルです。Laravelのインストール、React、Inertiaの導入、VPSにSSRでデプロイするまでの手順を網羅しています。話せば長くなるので、事前に要件の確認をおすすめします。'
+intro: 'これはLaravel + React + InertiaでSPAを開発するチュートリアルです。Laravelのインストール、React、Inertiaの導入、VPSにSSRでデプロイするまでの手順を網羅しています。話せば長くなるので先に要件の確認をおすすめします。'
 createdAt: '2022-12-05'
-img: 'cat.jpg'
+img: 'memos/laravel-react-inertia.jpg'
+tags: ['Laravel', 'React']
 ---
 
 export default ({ children }) => {children}
@@ -522,7 +523,7 @@ createInertiaApp({
 ## metaタグを動的に変更する
 Inertiaを採用する最もな理由はReact（SPA）をSSRさせたい（OGP対応）からかもしれません。metaタグを動的に変更する方法を学びましょう。
 
-metaタグを設定するHeadコンポーネント
+### metaタグを設定するHeadコンポーネント
 Inertiaにはmetaタグを動的に変更するためのHeadコンポーネントが用意されています。実際にTopページのmetaタグを変更してみましょう。最も簡単な方法は、ページごとにmetaタグを設定することです。Headコンポーネントで囲んだmetaタグがheadタグに追加されます。
 
 resources/js/Pages/Top.jsx
@@ -869,11 +870,11 @@ export default function ItemEdit({ item }) {
 
 さて、これで一通りReact側のCRUDが実装できました。さっそく本番環境にデプロイしてみましょう。本当にSSR（OGP）できているのでしょうか？
 
-VPSにデプロイ
-DNSの設定
+## VPSにデプロイ
+### DNSの設定
 KUSANAGIをプロビジョニング（配置）する前に、お手元のドメインのDNSを設定しておく必要があります。
 
-KUSANAGIのプロビジョニング
+### KUSANAGIのプロビジョニング
 このチュートリアルではLEMPの構築にKUSANAGI 9を使っています。KUSANAGI 8とはコマンドが異なるので注意してください。ターミナルからsshでVPSに接続し、プロビジョニングを行います。
 
 rootユーザーで実行
@@ -886,7 +887,10 @@ kusanagi provision --lamp --fqdn YOUR_DOMAIN --email YOUR_EMAIL --dbname YOUR_DB
 
 kusanagiユーザーで実行
 
+```nginx
 git clone git@github.com:kiyoshion/laravel-inertia-react-ssr.git repo
+```
+
 cloneしたrepoディレクトリに移動し、.envファイルを修正します。
 
 ```nginx
@@ -901,7 +905,7 @@ APP_NAME=Laravel
 APP_ENV=production
 APP_KEY=
 APP_DEBUG=false
-APP_URL=https://laravel-react-inertia.chichack.com
+APP_URL=YOUR_DOMEIN
 
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
@@ -961,7 +965,7 @@ pm2でSSRのプロセスをデーモン化（永続化）します。foreverな�
 
 ```nginx
 npm install -g pm2
-pm2 start bootstrap/js/ssr.jsx --name laravel_inertia -i 1
+pm2 start bootstrap/ssr/ssr.mjs --name inertia_test -i 1
 pm2 list
 ```
 
