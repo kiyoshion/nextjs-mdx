@@ -76,7 +76,7 @@ export default function Home({ works, memos }: { works: WorkProps[], memos: Memo
     <Layout meta={{
       title: "Kiyoshi Onoda's portfolio",
       desc: 'Webエンジニア小野田のポートフォリオです。',
-      image: '/img/works/portfolio-top.jpg',
+      image: `${CONSTS.HOST}/img/works/portfolio-top.jpg`,
       url: `${CONSTS.HOST}`
     }}>
 
