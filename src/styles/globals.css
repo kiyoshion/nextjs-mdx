@@ -39,3 +39,90 @@ a {
     background: black;
   }
 }
+
+main {
+  min-height: 75vh;
+}
+
+.bigTitle {
+  position: absolute;
+  left: 0;
+}
+
+pre {
+  padding: 1rem;
+  font-size: .8rem;
+  background-color: #e6e4e4;
+  overflow-x: scroll;
+}
+
+.memo-content > h2 {
+  margin: 2rem 0 .5rem;
+}
+
+.memo-content > h3 {
+  margin: 1rem 0 .5rem;
+}
+
+.memo-content > p {
+  margin: .5rem 0;
+}
+
+@media screen and (min-width: 600px) {
+  .memo-content > h2 {
+    margin: 4rem 0 1rem;
+  }
+
+  .memo-content > h3 {
+    margin: 2rem 0 1rem;
+  }
+
+  .memo-content > p {
+    margin: 1rem 0;
+  }
+}
+
+@keyframes hover {
+  0% {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(10px) scale(.8);
+    opacity: .2;
+  }
+}
+
+@keyframes hoverReverse {
+  0% {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-10px) scale(.8);
+    opacity: .2;
+  }
+}
+
+@keyframes hoverUp {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-10px) scale(.8);
+    opacity: .2;
+  }
+}
+
+.buttonHover:hover img{
+  animation: hover 1s infinite;
+}
+
+.buttonHoverReverse:hover img {
+  animation: hoverReverse 1s infinite;
+}
+
+.buttonHoverUp:hover img {
+  animation: hoverUp 1.4s infinite;
+}
