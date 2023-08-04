@@ -16,23 +16,8 @@ type WorkProps = {
     thumb: string;
     tag: string;
     stacks: string[];
-    frameworks: FrameworkProps[];
-    others: OtherProps[];
-    server: string;
     intro: string;
   };
-}
-
-type FrameworkProps = {
-  framework: string;
-}
-
-type StackProps = {
-  stack: string;
-}
-
-type OtherProps = {
-  other: string;
 }
 
 export const getStaticProps = () => {
@@ -76,33 +61,6 @@ export default function Works({ works, newtags }: { works: WorkProps[], newtags:
             onClick={() => setActive(`${tag}`)}
           >{tag}</span>
         ))}
-      </div>
-    )
-  }
-
-  const TagRender = () => {
-    return (
-      <div className='flex overflow-x-auto'>
-        <span
-          className={`flex-none py-1 md:px-4 px-2 text-xs mr-4 rounded-sm cursor-pointer hover:bg-gray-700 hover:text-white duration-75 ${active === 'ALL' ? 'bg-gray-800 text-white' : 'bg-gray-100'}`}
-          onClick={() => setActive('ALL')}
-        >ALL</span>
-        <span
-          className={`flex-none py-1 px-4 text-xs mr-4 rounded-sm cursor-pointer hover:bg-gray-700 hover:text-white duration-75 ${active === 'WEB SITE' ? 'bg-gray-800 text-white' : 'bg-gray-100'}`}
-          onClick={() => setActive('WEB SITE')}
-        >WEB SITE</span>
-        <span
-          className={`flex-none py-1 px-4 text-xs mr-4 rounded-sm cursor-pointer hover:bg-gray-700 hover:text-white duration-75 ${active === 'WEB APP' ? 'bg-gray-800 text-white' : 'bg-gray-100'}`}
-          onClick={() => setActive('WEB APP')}
-        >WEB APP</span>
-        <span
-          className={`flex-none py-1 px-4 text-xs mr-4 rounded-sm cursor-pointer hover:bg-gray-700 hover:text-white duration-75 ${active === 'APP' ? 'bg-gray-800 text-white' : 'bg-gray-100'}`}
-          onClick={() => setActive('CONCEPT APP')}
-        >CONCEPT APP</span>
-        <span
-          className={`flex-none py-1 px-4 text-xs mr-4 rounded-sm cursor-pointer hover:bg-gray-700 hover:text-white duration-75 ${active === 'APP' ? 'bg-gray-800 text-white' : 'bg-gray-100'}`}
-          onClick={() => setActive('APP')}
-        >APP</span>
       </div>
     )
   }

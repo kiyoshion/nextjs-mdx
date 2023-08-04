@@ -19,7 +19,6 @@ type Props = {
     intro: string;
     img: string;
     stacks: string[];
-    frameworks: string[];
     type: string;
     url: string;
     thumb: string;
