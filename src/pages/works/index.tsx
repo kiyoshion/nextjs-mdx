@@ -57,6 +57,7 @@ export default function Works({ works, newtags }: { works: WorkProps[], newtags:
         {newtags.map((tag: string) => (
           // eslint-disable-next-line react/jsx-key
           <span
+            key={tag}
             className={`flex-none py-1 md:px-4 px-2 text-xs mr-4 rounded-sm cursor-pointer hover:bg-gray-700 hover:text-white duration-75 ${active === tag ? 'bg-gray-800 text-white' : 'bg-gray-100'}`}
             onClick={() => setActive(`${tag}`)}
           >{tag}</span>
